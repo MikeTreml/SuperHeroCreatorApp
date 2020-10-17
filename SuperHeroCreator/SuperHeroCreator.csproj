@@ -19,10 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\Images\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\Images\deadpool.jpg" />
     <None Include="wwwroot\Images\spiderman.jpg" />
     <None Include="wwwroot\Images\tick.png" />
