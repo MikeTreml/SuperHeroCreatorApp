@@ -4,14 +4,21 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Superheroes</h1>
+
 
 <p>
+   
+    <a asp-action="AddRecords">Populate Database</a><br ><br>
+    
     <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
-    <thead>
+    <thead>     
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
@@ -34,8 +41,12 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+        @foreach (var item in Model)
+        {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
@@ -52,7 +63,7 @@
                 @Html.DisplayFor(modelItem => item.CatchPhrase)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Picture)
+                <img src=@Html.DisplayFor(modelItem => item.Picture) height="200" width="auto">
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
@@ -60,6 +71,6 @@
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
-}
+        }
     </tbody>
 </table>
